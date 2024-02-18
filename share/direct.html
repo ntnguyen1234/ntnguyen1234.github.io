@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    iframe {
+      display: block;
+      /* iframes are inline by default */
+      border: none;
+      /* Reset default border */
+      height: 100vh;
+      /* Viewport-relative units */
+      width: 100vw;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function embedIframe(url) {
+      let iframe = document.createElement("iframe");
+      iframe.src = url;
+      document.body.appendChild(iframe);
+    }
+    let url = "https://pastefy.app/B4uQxyha/raw";
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data["url"]) {
+          embedIframe(data["url"])
+        }
+        else {
+          location = location.hostname
+        }
+      })
+  </script>
+</body>
+
+</html>
