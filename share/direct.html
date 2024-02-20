@@ -22,24 +22,7 @@
 </head>
 
 <body>
-  <script>
-    function embedIframe(url) {
-      let iframe = document.createElement("iframe");
-      iframe.src = url;
-      document.body.appendChild(iframe);
-    }
-    let url = "https://pastefy.app/B4uQxyha/raw";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data["url"]) {
-          embedIframe(data["url"])
-        }
-        else {
-          location.href = location.origin
-        }
-      })
-  </script>
+  
 </body>
 
 </html>
